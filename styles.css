@@ -73,6 +73,8 @@ html, body {
     z-index: 2;
     opacity: 0;
     animation: fadeIn 3s ease-in-out forwards;
+    padding: 0 1rem; /* Add padding for small screens */
+    box-sizing: border-box;
 }
 
 .hero-title-image {
@@ -86,6 +88,8 @@ html, body {
     margin-top: 1rem;
     color: #fff;
     animation: fadeIn 3s ease-in-out forwards;
+    max-width: 90%; /* Ensure subtitle fits on small screens */
+    margin: 1rem auto; /* Center the subtitle */
 }
 
 .scroll-down {
@@ -123,21 +127,73 @@ html, body {
     transform: scale(1.05);
 }
 
-/* Keyframes */
-@keyframes fadeInScale {
-    0% { opacity: 0; transform: scale(0.8); }
-    100% { opacity: 1; transform: scale(1); }
+/* Media Queries for Responsiveness */
+
+/* Tablets and larger devices */
+@media (min-width: 768px) {
+    .hero-subtitle {
+        font-size: 2rem;
+    }
+
+    .enter-button {
+        font-size: 1.5rem;
+    }
+}
+
+/* Small devices (phones) */
+@media (max-width: 767px) {
+    .hero {
+        height: auto; /* Adjust height for small screens */
+    }
+
+    .hero-video {
+        transform: none; /* Remove parallax effect on small screens */
+        filter: brightness(60%) contrast(100%) sepia(20%);
+    }
+
+    .hero-content {
+        padding: 1rem; /* Ensure padding is applied on small screens */
+    }
+
+    .hero-title-image {
+        max-width: 90%; /* Adjust image size for small screens */
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+        margin: 0.5rem auto;
+    }
+
+    .scroll-down {
+        font-size: 1.5rem;
+    }
+
+    .enter-button {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+}
+
+/* Extra small devices (phones in portrait mode) */
+@media (max-width: 480px) {
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .scroll-down {
+        font-size: 1.2rem;
+    }
+
+    .enter-button {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
 }
 
 /* Keyframes */
 @keyframes fadeIn {
     0% { opacity: 0; transform: scale(0.8); }
     100% { opacity: 1; transform: scale(1); }
-}
-
-@keyframes fadeUp {
-    0% { opacity: 0; transform: translateY(30px); }
-    100% { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes bounce {
@@ -161,12 +217,6 @@ html, body {
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-@keyframes glow {
-    0% { text-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700; }
-    50% { text-shadow: 0 0 20px #ffd700, 0 0 30px #ffd700; }
-    100% { text-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700; }
 }
 
 @keyframes zoomOut {

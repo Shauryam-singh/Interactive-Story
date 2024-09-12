@@ -18,7 +18,6 @@ body {
     overflow: hidden;
 }
 
-
 /* Book */
 .book {
     position: relative;
@@ -65,8 +64,7 @@ body {
     z-index: 10;
 }
 
-.front,
-.back {
+.front, .back {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -103,8 +101,7 @@ body {
     transform: rotateY(-180deg);
 }
 
-.front-content,
-.back-content {
+.front-content, .back-content {
     width: 100%;
     height: 100%;
     display: flex;
@@ -123,8 +120,7 @@ body {
 }
 
 /* Page Content */
-.front-content,
-.back-content {
+.front-content, .back-content {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -143,8 +139,7 @@ body {
 }
 
 /* Paper flip effect */
-.flipped .front,
-.flipped .back {
+.flipped .front, .flipped .back {
     transform: rotateY(-180deg);
 }
 
@@ -172,37 +167,14 @@ i {
 }
 
 /* Paper stack order */
-#p1 {
-    z-index: 8;
-}
-
-#p2 {
-    z-index: 7;
-}
-
-#p3 {
-    z-index: 6;
-}
-
-#p4 {
-    z-index: 5;
-}
-
-#p5 {
-    z-index: 4;
-}
-
-#p6 {
-    z-index: 3;
-}
-
-#p7 {
-    z-index: 2;
-}
-
-#p8 {
-    z-index: 1;
-}
+#p1 { z-index: 8; }
+#p2 { z-index: 7; }
+#p3 { z-index: 6; }
+#p4 { z-index: 5; }
+#p5 { z-index: 4; }
+#p6 { z-index: 3; }
+#p7 { z-index: 2; }
+#p8 { z-index: 1; }
 
 /* Page Hover Effects */
 .paper:hover {
@@ -227,15 +199,21 @@ i {
 @media (max-width: 768px) {
     .book {
         width: 95vw;
-        height: 90vh;
+        height: 80vh; /* Adjust for better fit */
     }
+
+    .paper {
+        transform-origin: left;
+        transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.8s ease;
+    }
+
     .paper img {
         width: 100%;
         height: 100%;
         object-fit: cover;
         border-radius: 10px;
     }
-    
+
     i {
         font-size: 40px;
     }
@@ -244,9 +222,21 @@ i {
 @media (max-width: 480px) {
     .book {
         width: 95vw;
-        height: 70vh;
+        height: 60vh; /* Adjust for smaller screens */
     }
-    
+
+    .paper {
+        transform-origin: left;
+        transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.8s ease;
+    }
+
+    .paper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
     i {
         font-size: 30px;
     }
