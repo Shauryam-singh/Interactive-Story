@@ -24,6 +24,23 @@ html, body {
     background: #333;
 }
 
+/* Frame Image as a Border */
+.frame {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    pointer-events: none;
+}
+
+.frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 /* Hero Section Styling */
 .hero {
     height: 100vh;
@@ -105,7 +122,6 @@ html, body {
     color: #000;
     transform: scale(1.05);
 }
-
 
 /* Keyframes */
 @keyframes fadeInScale {
