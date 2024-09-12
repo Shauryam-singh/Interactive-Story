@@ -6,9 +6,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    const audio = document.getElementById('background-music');
-    audio.volume = 0.2;
-    audio.play();
+    const backgroundMusic = document.getElementById('background-music');
+    backgroundMusic.play();
+    
+    document.querySelector('.explore-button').addEventListener('click', function() {
+        backgroundMusic.pause();
+    });
+});
+
+document.querySelector('.btn').addEventListener('click', function (e) {
+    e.preventDefault();
+    const targetSection = document.querySelector(this.getAttribute('href'));
+    targetSection.scrollIntoView({ behavior: 'smooth' });
 });
 
 function handleChoice(choice) {
